@@ -8,7 +8,7 @@ import { ReactComponent as ADSLogo } from '../assets/ADS Icon.svg';
 
 export default function LeftSide() {
     return (
-        <div>
+        <div className='gap-6 flex flex-col'>
             <div className='flex flex-row justify-around items-center'>
                 <BookTimeLogo width={58} height={58} />
                 <p className='text-xl font-semibold w-1/2'>
