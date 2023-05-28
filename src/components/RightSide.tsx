@@ -5,7 +5,7 @@ import { ReactComponent as Razorpay } from "../assets/Razorpay Icon.svg";
 
 export default function RightSide() {
     return (
-        <div className='bg-white flex flex-col gap-7 items-center px-8 py-6'>
+        <div className='bg-white flex flex-col gap-7 items-center px-8 py-6  mt-16 mb-16 '>
             <div className='flex flex-row justify-between items-center w-2/4'>
                 <div className='w-20 flex flex-col justify-center items-center'>
                     <div className='bg-primary1 rounded-full text-center text-2xl w-10 h-10'>1</div>
