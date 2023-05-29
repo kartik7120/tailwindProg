@@ -2,6 +2,7 @@ import React from 'react'
 import SelectPlan from './SelectPlan'
 import { ReactComponent as ClockIcon } from "../assets/IconClockWarning.svg";
 import { ReactComponent as Razorpay } from "../assets/Razorpay Icon.svg";
+import Strip from './Strip';
 
 export default function RightSide() {
     return (
@@ -19,8 +20,8 @@ export default function RightSide() {
             <p className='font-semibold text-3xl text-black'>Select your subcription plan</p>
             <form action="">
                 <div className='flex flex-col gap-4'>
-                    <SelectPlan name="plan" id="plan1" totalPrice={99} months={12} offerString='Offer expired' />
-                    <SelectPlan name="plan" id="plan2" totalPrice={179} months={12} offerString='Recommended' />
+                    <SelectPlan name="plan" disabled={true} id="plan1" totalPrice={99} months={12} expired={true} offerString='Offer expired' />
+                    <SelectPlan name="plan" id="plan2" totalPrice={179} months={12} recommended={true} offerString='Recommended' />
                     <SelectPlan name="plan" id="plan3" totalPrice={99} months={12} />
                     <SelectPlan name="plan" id="plan4" totalPrice={99} months={3} />
                 </div>
@@ -53,6 +54,7 @@ export default function RightSide() {
                     </button>
                 </div>
                 <Razorpay className='mt-4' width={120} height={43} />
+                <Strip name='Recommended' color='#47BA68'/>
             </form>
         </div>
     )
