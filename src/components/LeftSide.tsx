@@ -1,4 +1,3 @@
-import React from 'react';
 import { CurrencyRupeeIcon, PlusIcon } from '@heroicons/react/20/solid'
 import { ReactComponent as BookTimeLogo } from '../assets/Book Icon.svg'
 import { ReactComponent as ClockIcon } from '../assets/Clock Icon.svg';

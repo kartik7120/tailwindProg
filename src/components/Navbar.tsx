@@ -1,4 +1,3 @@
-import React from 'react';
 import { ReactComponent as CompanyLogo } from '../assets/companylogo.svg';
 import { ChevronDownIcon, MagnifyingGlassIcon,  } from '@heroicons/react/20/solid';
 export default function Navbar() {

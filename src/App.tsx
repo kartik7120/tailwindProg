@@ -1,5 +1,4 @@
 /// <reference types="vite-plugin-svgr/client" />
-import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import { CurrencyRupeeIcon, } from '@heroicons/react/20/solid'
