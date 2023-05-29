@@ -5,6 +5,15 @@ import { ReactComponent as Razorpay } from "../assets/Razorpay Icon.svg";
 import Strip from './Strip';
 
 export default function RightSide() {
+
+    const [plans, setPlans] = React.useState(
+        {
+            id: "plan1",
+            totalPrice: 0,
+            months: 0,
+        }
+    );
+
     return (
         <div className='bg-white flex flex-col gap-7 items-center px-8 py-6  mt-16 mb-16 '>
             <div className='flex flex-row justify-between items-center w-2/4'>
@@ -20,20 +29,20 @@ export default function RightSide() {
             <p className='font-semibold text-3xl text-black'>Select your subcription plan</p>
             <form action="">
                 <div className='flex flex-col gap-4'>
-                    <SelectPlan name="plan" disabled={true} id="plan1" totalPrice={99} months={12} expired={true} offerString='Offer expired' />
-                    <SelectPlan name="plan" id="plan2" totalPrice={179} months={12} recommended={true} offerString='Recommended' />
-                    <SelectPlan name="plan" id="plan3" totalPrice={99} months={12} />
-                    <SelectPlan name="plan" id="plan4" totalPrice={99} months={3} />
+                    <SelectPlan setPlan={setPlans} name="plan" disabled={true} id="plan1" totalPrice={99} months={12} expired={true} offerString='Offer expired' />
+                    <SelectPlan setPlan={setPlans} name="plan" id="plan2" totalPrice={179} months={12} recommended={true} offerString='Recommended' />
+                    <SelectPlan setPlan={setPlans} name="plan" id="plan3" totalPrice={99} months={12} />
+                    <SelectPlan setPlan={setPlans} name="plan" id="plan4" totalPrice={99} months={3} />
                 </div>
                 <div className='flex flex-col gap-3 mt-3'>
                     <div className='text-black text-xl flex flex-row justify-between items-center'>
                         <p>Subcription</p>
-                        <span className='block'>&#x20b9;18&#44;500</span>
+                        <span className='block'>&#x20b9;{plans.totalPrice}</span>
                     </div>
                     <div className='bg-red-300 p-4 border-2 border-red-600 rounded'>
                         <div className='text-red-600  flex flex-row justify-between items-center'>
                             <p className='font-medium'>Limited Time Offer</p>
-                            <span className='block'>&#x20b9;18&#44;500</span>
+                            <span className='block'>&#x20b9;{(Math.floor(plans.totalPrice / plans.months))}</span>
                         </div>
                         <div className='flex flex-row gap-4'>
                             <ClockIcon width={24} height={24} className='stroke-red-500 fill-red-500' />
@@ -42,7 +51,9 @@ export default function RightSide() {
                     </div>
                     <div className='flex flex-row justify-between'>
                         <p className='text-black'><span className='font-semibold'>Total</span> (Incl. all of 18% GST) </p>
-                        <p className='text-black font-bold'>&#x20b9; 149</p>
+                        <p className='text-black font-bold'>&#x20b9; {
+                            plans.totalPrice - (Math.floor(plans.totalPrice / plans.months))
+                        }</p>
                     </div>
                 </div>
                 <div className='flex flex-row gap-5'>
@@ -54,7 +65,6 @@ export default function RightSide() {
                     </button>
                 </div>
                 <Razorpay className='mt-4' width={120} height={43} />
-                <Strip name='Recommended' color='#47BA68'/>
             </form>
         </div>
     )
