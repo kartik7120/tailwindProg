@@ -2,7 +2,6 @@ import React from 'react'
 import SelectPlan from './SelectPlan'
 import { ReactComponent as ClockIcon } from "../assets/IconClockWarning.svg";
 import { ReactComponent as Razorpay } from "../assets/Razorpay Icon.svg";
-import Strip from './Strip';
 
 export default function RightSide() {
 
