@@ -9,7 +9,7 @@ interface Props {
     disabled?: boolean,
     recommended?: boolean,
     expired?: boolean,
-    setPlan:    React.Dispatch<React.SetStateAction<{
+    setPlan: React.Dispatch<React.SetStateAction<{
         id: string;
         totalPrice: number;
         months: number;
